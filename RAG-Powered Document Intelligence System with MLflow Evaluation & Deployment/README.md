@@ -7,25 +7,25 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI-Retrieval--Augmented%20Generation-blue?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
-  <img src="https://img.shields.io/badge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Evaluation-MLflow-orange?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Deployment-Azure%20Cloud-0078D4?style=flat-square"/>
-  img.shields.io/badge/Container-Docker-2496ED?style=flat-square"/>
-  ://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
+  ields.io/badge/Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
+  https://img.shields.io/badge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
+  https://img.shields.io/badge/Evaluation-MLflow-orange?style=flat-square"/>
+  https://img.shields.io/badge/Deployment-Azure%20Cloud-0078D4?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square"/>
+  <img src="https://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
 </p>
 
 ---
 
-# 📌 Overview
+## 📌 Overview
 
-This project delivers a **production-grade Retrieval-Augmented Generation (RAG) system** that enables users to query **private document corpora** and receive **accurate, context-aware, source-grounded answers**.
+This project delivers a production-grade Retrieval-Augmented Generation (RAG) system that enables users to query private document corpora and receive accurate, context-aware, source-grounded answers.
 
-Deployed on **Microsoft Azure Cloud**, the system is designed for **real-world client delivery as a freelancer solution**.
+Deployed on Microsoft Azure Cloud, the system is designed for real-world client delivery as a freelancer solution.
 
 ---
 
-# 🧠 Business Problem
+## 🧠 Business Problem
 
 Professionals working with large volumes of unstructured documents (medical, legal, research) struggle to:
 
@@ -33,24 +33,24 @@ Professionals working with large volumes of unstructured documents (medical, leg
 - Navigate large PDF corpora efficiently  
 - Use traditional keyword search effectively  
 
-➡️ This results in **lost productivity and inefficient decision-making**
+➡️ This results in lost productivity and inefficient decision-making.
 
 ---
 
-# 🎯 Solution
+## 🎯 Solution
 
-A **Retrieval-Augmented Generation (RAG) system** that:
+A Retrieval-Augmented Generation (RAG) system that:
 
 ✅ Understands natural language queries  
 ✅ Retrieves semantically relevant document chunks  
 ✅ Generates accurate answers using LLMs  
-✅ Provides **source-backed responses**
+✅ Provides source-backed responses  
 
 ---
 
-# ⚙️ Architecture Diagram
+## ⚙️ Architecture Diagram
 
-## 🔹 Visual
+### 🔹 Visual
 
 ```mermaid
 flowchart LR
@@ -66,7 +66,7 @@ flowchart LR
 
 ***
 
-## 🔹 System Flow
+### 🔹 System Flow
 
 ```
 User → Streamlit UI → Retriever → Vector DB → Context Chunks
@@ -75,41 +75,48 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
 
 ***
 
-# 📊 Data & Inputs
+## 📊 Data & Inputs
 
-* 15 oncology PDF documents
-* Natural language queries
+* 15 domain-specific oncology PDF documents
+* Natural language user queries
 * Embedding model: `all-MiniLM-L6-v2`
 * Vector DB: ChromaDB
 
 ***
 
-# 🔧 Technical Implementation
+## 🔧 Technical Implementation
 
-## Document Ingestion
+### 1️⃣ Document Ingestion
 
-* LangChain PyPDFLoader
+Parsed PDFs using LangChain PyPDFLoader
 
-## Text Chunking
+### 2️⃣ Text Chunking
 
-* Recursive splitting with overlap
+Recursive splitting with overlap
 
-## Embeddings
+### 3️⃣ Embeddings
 
-* Sentence Transformers
+Generated via Sentence Transformers
 
-## Retrieval
+### 4️⃣ Vector Storage
 
-* Top-K search + filtering
+Stored in ChromaDB  
+Persistent and preloaded
 
-## LLM
+### 5️⃣ Retrieval Pipeline
 
-* Anthropic Claude API
-* Multi-turn conversations
+Top-K retrieval  
+Similarity filtering
+
+### 6️⃣ LLM Integration
+
+Anthropic Claude API  
+Multi-turn conversations  
+Context-aware responses
 
 ***
 
-# 📈 Evaluation Framework
+## 📈 Evaluation Framework
 
 * 20 Q\&A pairs
 * Metrics:
@@ -121,7 +128,7 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
 
 ***
 
-# ☁️ Azure Deployment
+## ☁️ Azure Deployment
 
 ### Services Used
 
@@ -133,27 +140,25 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
 
 ### Deployment Flow
 
-```
 Local → Docker → ACR → Azure → Live App
-```
 
 ***
 
-# 🌐 Live Demo
+## 🌐 Live Demo
 
 <https://rag-doc-assistant.azurewebsites.net>
 
 ***
 
-# 🖥 User Interface
+## 🖥 User Interface
 
 * Streamlit chat UI
-* Real-time answers
-* Source citations
+* Real-time responses
+* Source citations display
 
 ***
 
-# 🐳 Docker Setup
+## 🐳 Docker Setup
 
 ```bash
 docker build -t rag-qa-system .
@@ -162,23 +167,23 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
-# 🔐 Security & Privacy
+## 🔐 Security & Privacy
 
 ✅ Private dataset ready  
-✅ Secure API storage (Key Vault)  
+✅ Azure Key Vault for secrets  
 ✅ No external data leakage
 
 ***
 
-# 📈 Scalability
+## 📈 Scalability
 
 * Azure horizontal scaling
 * Multi-user support
-* SaaS-ready
+* SaaS-ready architecture
 
 ***
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 | Layer      | Technology            |
 | ---------- | --------------------- |
@@ -193,36 +198,36 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
-# 🚀 Key Achievements
+## 🚀 Key Achievements
 
-* ✅ End-to-end RAG system
-* ✅ MLflow optimization
-* ✅ Azure deployment
-* ✅ Low latency responses
-
-***
-
-# 💼 Freelance Use Case
-
-* Healthcare
-* Legal
-* Research
-* Enterprise systems
+* ✅ Built end-to-end RAG system
+* ✅ Optimized via MLflow experiments
+* ✅ Production Azure deployment
+* ✅ Low-latency responses
 
 ***
 
-# 📬 Contact
+## 💼 Freelance Use Case
 
-**Mohammad Saad**  
-Data Scientist & AI Engineer
+Healthcare  
+Legal  
+Research  
+Enterprise knowledge systems
 
 ***
 
-# ⭐ Future Enhancements
+## 📬 Contact
 
-* Hybrid search
-* Multilingual support
-* Feedback learning
-* Enterprise integrations
+Mohammad Saad  
+Data Scientist & Engineer
+
+***
+
+## ⭐ Future Enhancements
+
+Hybrid search  
+Multilingual support  
+Feedback learning  
+Enterprise integrations
 
 ```
