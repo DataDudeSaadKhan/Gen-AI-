@@ -1,4 +1,3 @@
-
 <div align="center">
   <h1>
     🧠 RAG-Based Intelligent Document Q&A System (Azure Deployment)
@@ -6,26 +5,26 @@
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AI-Retrieval--Augmented%20Generation-blue?style=flat-square"/>
-  ields.io/badge/Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
-  https://img.shields.io/badge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
-  https://img.shields.io/badge/Evaluation-MLflow-orange?style=flat-square"/>
-  https://img.shields.io/badge/Deployment-Azure%20Cloud-0078D4?style=flat-square"/>
+  AI-Retrieval--Augmented%20Generation-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Evaluation-MLflow-orange?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Deployment-Azure%20Cloud-0078D4?style=flat-square"/>
   <img src="https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square"/>
   <img src="https://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
 </p>
 
 ---
 
-## 📌 Overview
+# 📌 Overview
 
-This project delivers a production-grade Retrieval-Augmented Generation (RAG) system that enables users to query private document corpora and receive accurate, context-aware, source-grounded answers.
+This project delivers a **production-grade Retrieval-Augmented Generation (RAG) system** that enables users to query **private document corpora** and receive **accurate, context-aware, source-grounded answers**.
 
-Deployed on Microsoft Azure Cloud, the system is designed for real-world client delivery as a freelancer solution.
+Deployed on **Microsoft Azure Cloud**, the system is designed for **real-world client delivery as a freelancer solution**.
 
 ---
 
-## 🧠 Business Problem
+# 🧠 Business Problem
 
 Professionals working with large volumes of unstructured documents (medical, legal, research) struggle to:
 
@@ -33,24 +32,24 @@ Professionals working with large volumes of unstructured documents (medical, leg
 - Navigate large PDF corpora efficiently  
 - Use traditional keyword search effectively  
 
-➡️ This results in lost productivity and inefficient decision-making.
+➡️ This results in **lost productivity and inefficient decision-making**.
 
 ---
 
-## 🎯 Solution
+# 🎯 Solution
 
-A Retrieval-Augmented Generation (RAG) system that:
+A **Retrieval-Augmented Generation (RAG) system** that:
 
 ✅ Understands natural language queries  
 ✅ Retrieves semantically relevant document chunks  
 ✅ Generates accurate answers using LLMs  
-✅ Provides source-backed responses  
+✅ Provides **source-backed responses**
 
 ---
 
-## ⚙️ Architecture Diagram
+# ⚙️ Architecture Diagram
 
-### 🔹 Visual
+## 🔹 Visual
 
 ```mermaid
 flowchart LR
@@ -66,7 +65,7 @@ flowchart LR
 
 ***
 
-### 🔹 System Flow
+## 🔹 System Flow
 
 ```
 User → Streamlit UI → Retriever → Vector DB → Context Chunks
@@ -75,7 +74,7 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
 
 ***
 
-## 📊 Data & Inputs
+# 📊 Data & Inputs
 
 * 15 domain-specific oncology PDF documents
 * Natural language user queries
@@ -84,39 +83,39 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
 
 ***
 
-## 🔧 Technical Implementation
+# 🔧 Technical Implementation
 
-### 1️⃣ Document Ingestion
+## 1️⃣ Document Ingestion
 
-Parsed PDFs using LangChain PyPDFLoader
+* Parsed PDFs using **LangChain PyPDFLoader**
 
-### 2️⃣ Text Chunking
+## 2️⃣ Text Chunking
 
-Recursive splitting with overlap
+* Recursive splitting with overlap
 
-### 3️⃣ Embeddings
+## 3️⃣ Embeddings
 
-Generated via Sentence Transformers
+* Generated via **Sentence Transformers**
 
-### 4️⃣ Vector Storage
+## 4️⃣ Vector Storage
 
-Stored in ChromaDB  
-Persistent and preloaded
+* Stored in **ChromaDB**
+* Persistent and preloaded
 
-### 5️⃣ Retrieval Pipeline
+## 5️⃣ Retrieval Pipeline
 
-Top-K retrieval  
-Similarity filtering
+* Top-K retrieval
+* Similarity filtering
 
-### 6️⃣ LLM Integration
+## 6️⃣ LLM Integration
 
-Anthropic Claude API  
-Multi-turn conversations  
-Context-aware responses
+* **Anthropic Claude API**
+* Multi-turn conversations
+* Context-aware responses
 
 ***
 
-## 📈 Evaluation Framework
+# 📈 Evaluation Framework
 
 * 20 Q\&A pairs
 * Metrics:
@@ -128,7 +127,7 @@ Context-aware responses
 
 ***
 
-## ☁️ Azure Deployment
+# ☁️ Azure Deployment
 
 ### Services Used
 
@@ -140,17 +139,21 @@ Context-aware responses
 
 ### Deployment Flow
 
+```
 Local → Docker → ACR → Azure → Live App
+```
 
 ***
 
-## 🌐 Live Demo
+# 🌐 Live Demo
 
-<https://rag-doc-assistant.azurewebsites.net>
+```
+https://rag-doc-assistant.azurewebsites.net
+```
 
 ***
 
-## 🖥 User Interface
+# 🖥 User Interface
 
 * Streamlit chat UI
 * Real-time responses
@@ -158,7 +161,7 @@ Local → Docker → ACR → Azure → Live App
 
 ***
 
-## 🐳 Docker Setup
+# 🐳 Docker Setup
 
 ```bash
 docker build -t rag-qa-system .
@@ -167,7 +170,7 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
-## 🔐 Security & Privacy
+# 🔐 Security & Privacy
 
 ✅ Private dataset ready  
 ✅ Azure Key Vault for secrets  
@@ -175,7 +178,7 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
-## 📈 Scalability
+# 📈 Scalability
 
 * Azure horizontal scaling
 * Multi-user support
@@ -183,7 +186,7 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
 | Layer      | Technology            |
 | ---------- | --------------------- |
@@ -198,7 +201,7 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
-## 🚀 Key Achievements
+# 🚀 Key Achievements
 
 * ✅ Built end-to-end RAG system
 * ✅ Optimized via MLflow experiments
@@ -207,27 +210,27 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
-## 💼 Freelance Use Case
+# 💼 Freelance Use Case
 
-Healthcare  
-Legal  
-Research  
-Enterprise knowledge systems
+* Healthcare
+* Legal
+* Research
+* Enterprise knowledge systems
 
 ***
 
-## 📬 Contact
+# 📬 Contact
 
-Mohammad Saad  
+**Mohammad Saad**  
 Data Scientist & Engineer
 
 ***
 
-## ⭐ Future Enhancements
+# ⭐ Future Enhancements
 
-Hybrid search  
-Multilingual support  
-Feedback learning  
-Enterprise integrations
+* Hybrid search
+* Multilingual support
+* Feedback learning
+* Enterprise integrations
 
 ```
