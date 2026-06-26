@@ -9,45 +9,45 @@
 </div>
 
 <p align="center">
-  img.shields.io/badge/AI-Retrieval--Augmented%20Generation-blue?style=flat-square"/>
-  /Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
-  <img src="https://img.shields.io/badge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
+  etrieval--Augmented%20Generation-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
+  adge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
   <img src="https://img.shields.io/badge/Evaluation-MLflow-orange?style=flat-square"/>
-  <img src=https://img.shields.io/badge/Deployment-Azure%20Cloud-0078D4?style=flat-square
-  img.shields.io/badge/Container-Docker-2496ED?style=flat-square"/>
-  <img src="https://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
+  -Azure%20Cloud-0078D4?style=flat-square"/>
+  -2496ED?style=flat-square"/>
+  ://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
 </p>
 
 ---
 
-# 🧠 Overview
+# 📌 Overview
 
 This project delivers a **production-grade Retrieval-Augmented Generation (RAG) system** that enables users to query **private document corpora** and receive **accurate, context-aware, source-grounded answers**.
 
-Deployed on **Microsoft Azure**, the system is designed for **real-world client delivery as a freelancer solution**.
+Deployed on **Microsoft Azure Cloud**, the system is designed for **real-world client delivery as a freelancer solution**, enabling secure, scalable, and intelligent document interaction.
 
 ---
 
 # 🧠 Business Problem
 
-Professionals working with large document collections struggle to:
+Professionals working with large volumes of unstructured documents (medical, legal, research) struggle to:
 
 - Extract precise answers quickly  
-- Navigate unstructured PDFs  
+- Navigate large PDF corpora efficiently  
 - Use traditional keyword search effectively  
 
-➡️ This leads to **inefficiency and missed insights**
+➡️ This results in **lost productivity and inefficient decision-making**.
 
 ---
 
 # 🎯 Solution
 
-A **RAG pipeline** that:
+A **Retrieval-Augmented Generation (RAG) system** that:
 
 ✅ Understands natural language queries  
-✅ Retrieves relevant document chunks  
-✅ Generates accurate answers using LLM  
-✅ Provides **traceable citations**
+✅ Retrieves semantically relevant document chunks  
+✅ Generates accurate answers using LLMs  
+✅ Provides **source-backed responses**  
 
 ---
 
@@ -56,70 +56,91 @@ A **RAG pipeline** that:
 ## 🔹 Visual (Mermaid)
 
 ```mermaid
-flowchart TD
-    A[User Query - Streamlit UI] --> B[Retriever Layer]
-    B --> C[ChromaDB Vector Store]
-    C --> D[Top-K Relevant Chunks]
-    D --> E[Prompt Augmentation]
-    E --> F[Anthropic Claude LLM]
-    F --> G[Answer + Sources]
-    G --> A
+flowchart LR
+    A[User] --> B[Streamlit Web App]
+    B --> C[Retriever Layer]
+    C --> D[(ChromaDB Vector Store)]
+    D --> E[Top-K Relevant Chunks]
+    E --> F[Prompt Augmentation]
+    F --> G[Claude LLM API]
+    G --> H[Answer + Source Citations]
+    H --> B
 ````
 
 ***
 
-## 🔹 Simplified Flow
+## 🔹 System Flow (Readable)
 
 ```
-User → Web App (Streamlit)
-     → Vector Search (ChromaDB)
-     → Context Retrieval
-     → LLM (Claude API)
-     → Answer + Sources
+User → Streamlit UI → Retriever → Vector DB → Context Chunks
+     → Prompt Builder → Claude LLM → Answer + Sources
 ```
 
 ***
 
 # 📊 Data & Inputs
 
-* 15 Oncology PDFs
-* Natural language queries
-* Embeddings:
-  * all-MiniLM-L6-v2
-* Vector DB:
-  * ChromaDB (cosine similarity)
+* 15 domain-specific oncology PDF documents
+* Natural language user queries
+* Embeddings model:
+  * `all-MiniLM-L6-v2` (Sentence Transformers)
+* Vector database:
+  * ChromaDB with cosine similarity
 
 ***
 
-# 🔧 Technical Components
+# 🔧 Technical Implementation
 
-### 1. Ingestion
+## 1️⃣ Document Ingestion
 
-* PyPDFLoader (LangChain)
+* Parsed PDFs using **LangChain PyPDFLoader**
 
-### 2. Chunking
+## 2️⃣ Text Chunking
 
-* Recursive splitting with overlap
+* Recursive splitting with configurable:
+  * Chunk size
+  * Overlap
 
-### 3. Embeddings
+## 3️⃣ Embeddings
 
-* Sentence Transformers
+* Generated via **Sentence Transformers**
 
-### 4. Retrieval
+## 4️⃣ Vector Storage
 
-* Top-K + similarity filtering
+* Stored in **ChromaDB**
+* Persistent and preloaded for low latency
 
-### 5. LLM
+## 5️⃣ Retrieval Pipeline
 
-* Anthropic Claude API
+* Top-K retrieval
+* Similarity threshold filtering
 
-### 6. Evaluation
+## 6️⃣ LLM Integration
 
-* 216 MLflow experiments
+* Powered by **Anthropic Claude API**
+* Supports multi-turn conversations
+* Context-aware answers
+
+***
+
+# 📈 Evaluation Framework
+
+* 20 ground-truth Q\&A pairs
 * Metrics:
   * Hit Rate\@K
   * Precision\@K
   * Recall\@K
+
+📊 Conducted:
+
+* **216 MLflow experiments**
+
+➡️ Optimized:
+
+* Chunk size
+* Overlap
+* Retrieval parameters
+* Embedding configurations
 
 ***
 
@@ -130,15 +151,23 @@ User → Web App (Streamlit)
 * Azure App Service / Container Apps
 * Azure Container Registry (ACR)
 * Azure Storage (Vector DB persistence)
-* Azure Key Vault (Secrets)
-* Azure Monitor
+* Azure Key Vault (API security)
+* Azure Monitor (logging)
 
 ***
 
-## 🔹 Deployment Flow
+## 🔹 Deployment Workflow
 
 ```
-Local → Docker Build → ACR → Azure App Service → Live Web App
+Local Development
+   ↓
+Docker Containerization
+   ↓
+Push to Azure Container Registry
+   ↓
+Deploy to Azure App Service
+   ↓
+Live Web Application
 ```
 
 ***
@@ -151,13 +180,24 @@ https://rag-doc-assistant.azurewebsites.net
 
 ### Demo Capabilities:
 
-* Ask medical questions
-* Get instant contextual answers
+* Ask domain-specific questions
+* Receive instant contextual answers
 * View supporting document sources
 
 ***
 
-# 🐳 Docker
+# 🖥 User Interface
+
+Built using **Streamlit**:
+
+* Chat-based interface
+* Dark mode UI
+* Real-time responses
+* Expandable context sources
+
+***
+
+# 🐳 Docker Setup
 
 ```bash
 docker build -t rag-qa-system .
@@ -166,59 +206,77 @@ docker run -p 8501:8501 rag-qa-system
 
 ***
 
+# 🔐 Security & Privacy
+
+✅ Designed for private datasets  
+✅ Secure API key management via Azure Key Vault  
+✅ No external data leakage  
+✅ Suitable for sensitive domains
+
+***
+
+# 📈 Scalability
+
+* Azure-based horizontal scaling
+* Supports multi-user scenarios
+* Extendable to SaaS architecture
+
+***
+
 # 🛠 Tech Stack
 
-| Layer      | Tools                 |
-| ---------- | --------------------- |
-| UI         | Streamlit             |
-| Backend    | Python, LangChain     |
-| Embeddings | Sentence Transformers |
-| Vector DB  | ChromaDB              |
-| LLM        | Claude API            |
-| Tracking   | MLflow                |
-| Cloud      | Azure                 |
-| Container  | Docker                |
+| Layer               | Technology            |
+| ------------------- | --------------------- |
+| UI                  | Streamlit             |
+| Backend             | Python, LangChain     |
+| Embeddings          | Sentence Transformers |
+| Vector DB           | ChromaDB              |
+| LLM                 | Anthropic Claude      |
+| Experiment Tracking | MLflow                |
+| Containerization    | Docker                |
+| Cloud               | Microsoft Azure       |
 
 ***
 
 # 🚀 Key Achievements
 
-* End-to-end RAG system built
-* Optimized via MLflow experimentation
-* Azure production deployment
-* Low-latency retrieval system
-* Client-ready private document assistant
+* ✅ End-to-end RAG system development
+* ✅ High retrieval accuracy via tuning
+* ✅ Production deployment on Azure
+* ✅ Low-latency response system
+* ✅ Modular and scalable pipeline design
 
 ***
 
 # 💼 Freelance Use Case
 
-Customizable for:
+This solution can be adapted for:
 
-* Healthcare
-* Legal
-* Research
-* Enterprise knowledge systems
+* 🏥 Healthcare document intelligence
+* ⚖️ Legal contract analysis
+* 📊 Business research tools
+* 📚 Educational assistants
 
 ***
 
 # 📬 Contact
 
-**Mohammad Saad**  
-Data Scientist | Data Engineer
+**Saad Khan**  
+Data Scientist and Engineer
 
 Available for:
 
 * RAG system development
 * Azure AI deployments
-* Private document intelligence solutions
+* Document intelligence solutions
 
 ***
 
 # ⭐ Future Enhancements
 
-* Hybrid search
-* Multi-language support
+* Hybrid search (BM25 + Vector)
+* Multilingual support
+* Feedback-driven ranking
 * Enterprise integrations
 
 ```
