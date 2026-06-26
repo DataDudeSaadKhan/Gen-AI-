@@ -1,7 +1,3 @@
-
-***
-
-````markdown
 <div align="center">
   <h1>
     🧠 RAG-Based Intelligent Document Q&A System (Azure Deployment)
@@ -9,13 +5,13 @@
 </div>
 
 <p align="center">
-  etrieval--Augmented%20Generation-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/AI-Retrieval--Augmented%20Generation-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
-  adge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
+  <img src="https://img.shields.io/badge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
   <img src="https://img.shields.io/badge/Evaluation-MLflow-orange?style=flat-square"/>
-  -Azure%20Cloud-0078D4?style=flat-square"/>
-  -2496ED?style=flat-square"/>
-  ://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Deployment-Azure%20Cloud-0078D4?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square"/>
+  <img src="https://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
 </p>
 
 ---
@@ -24,19 +20,19 @@
 
 This project delivers a **production-grade Retrieval-Augmented Generation (RAG) system** that enables users to query **private document corpora** and receive **accurate, context-aware, source-grounded answers**.
 
-Deployed on **Microsoft Azure Cloud**, the system is designed for **real-world client delivery as a freelancer solution**, enabling secure, scalable, and intelligent document interaction.
+Deployed on **Microsoft Azure Cloud**, the system is designed for **real-world client delivery as a freelancer solution**.
 
 ---
 
 # 🧠 Business Problem
 
-Professionals working with large volumes of unstructured documents (medical, legal, research) struggle to:
+Professionals working with large volumes of unstructured documents struggle to:
 
 - Extract precise answers quickly  
 - Navigate large PDF corpora efficiently  
 - Use traditional keyword search effectively  
 
-➡️ This results in **lost productivity and inefficient decision-making**.
+➡️ This results in **lost productivity and inefficient decision-making**
 
 ---
 
@@ -45,15 +41,15 @@ Professionals working with large volumes of unstructured documents (medical, leg
 A **Retrieval-Augmented Generation (RAG) system** that:
 
 ✅ Understands natural language queries  
-✅ Retrieves semantically relevant document chunks  
+✅ Retrieves semantically relevant chunks  
 ✅ Generates accurate answers using LLMs  
-✅ Provides **source-backed responses**  
+✅ Provides **source-backed responses**
 
 ---
 
 # ⚙️ Architecture Diagram
 
-## 🔹 Visual (Mermaid)
+## 🔹 Visual
 
 ```mermaid
 flowchart LR
@@ -65,7 +61,6 @@ flowchart LR
     F --> G[Claude LLM API]
     G --> H[Answer + Source Citations]
     H --> B
-````
 
 ***
 
