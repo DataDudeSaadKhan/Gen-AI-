@@ -47,6 +47,7 @@ A **Retrieval-Augmented Generation (RAG) system** that:
 
 ---
 
+````markdown
 # ⚙️ Architecture Diagram
 
 ## 🔹 Visual
@@ -61,14 +62,14 @@ flowchart LR
     F --> G[Claude LLM API]
     G --> H[Answer + Source Citations]
     H --> B
+````
 
 ***
 
-## 🔹 System Flow (Readable)
+## 🔹 System Flow
 
 ```
-User → Streamlit UI → Retriever → Vector DB → Context Chunks
-     → Prompt Builder → Claude LLM → Answer + Sources
+User → Streamlit UI → Retriever → Vector DB → Context Chunks → Prompt Builder → Claude LLM → Answer + Sources
 ```
 
 ***
@@ -81,114 +82,6 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
   * `all-MiniLM-L6-v2` (Sentence Transformers)
 * Vector database:
   * ChromaDB with cosine similarity
-
-***
-
-# 🔧 Technical Implementation
-
-## 1️⃣ Document Ingestion
-
-* Parsed PDFs using **LangChain PyPDFLoader**
-
-## 2️⃣ Text Chunking
-
-* Recursive splitting with configurable:
-  * Chunk size
-  * Overlap
-
-## 3️⃣ Embeddings
-
-* Generated via **Sentence Transformers**
-
-## 4️⃣ Vector Storage
-
-* Stored in **ChromaDB**
-* Persistent and preloaded for low latency
-
-## 5️⃣ Retrieval Pipeline
-
-* Top-K retrieval
-* Similarity threshold filtering
-
-## 6️⃣ LLM Integration
-
-* Powered by **Anthropic Claude API**
-* Supports multi-turn conversations
-* Context-aware answers
-
-***
-
-# 📈 Evaluation Framework
-
-* 20 ground-truth Q\&A pairs
-* Metrics:
-  * Hit Rate\@K
-  * Precision\@K
-  * Recall\@K
-
-📊 Conducted:
-
-* **216 MLflow experiments**
-
-➡️ Optimized:
-
-* Chunk size
-* Overlap
-* Retrieval parameters
-* Embedding configurations
-
-***
-
-# ☁️ Azure Deployment
-
-## 🔹 Services Used
-
-* Azure App Service / Container Apps
-* Azure Container Registry (ACR)
-* Azure Storage (Vector DB persistence)
-* Azure Key Vault (API security)
-* Azure Monitor (logging)
-
-***
-
-## 🔹 Deployment Workflow
-
-```
-Local Development
-   ↓
-Docker Containerization
-   ↓
-Push to Azure Container Registry
-   ↓
-Deploy to Azure App Service
-   ↓
-Live Web Application
-```
-
-***
-
-# 🌐 Live Demo
-
-```
-https://rag-doc-assistant.azurewebsites.net
-```
-
-### Demo Capabilities:
-
-* Ask domain-specific questions
-* Receive instant contextual answers
-* View supporting document sources
-
-***
-
-# 🖥 User Interface
-
-Built using **Streamlit**:
-
-* Chat-based interface
-* Dark mode UI
-* Real-time responses
-* Expandable context sources
 
 ***
 
