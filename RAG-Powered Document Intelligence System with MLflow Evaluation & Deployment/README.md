@@ -1,3 +1,4 @@
+
 <div align="center">
   <h1>
     🧠 RAG-Based Intelligent Document Q&A System (Azure Deployment)
@@ -5,13 +6,13 @@
 </div>
 
 <p align="center">
-  AI-Retrieval--Augmented%20Generation-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/AI-Retrieval--Augmented%20Generation-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Embeddings-ChromaDB%20Vector%20Search-lightblue?style=flat-square"/>
   <img src="https://img.shields.io/badge/LLM-Anthropic%20Claude-purple?style=flat-square"/>
   <img src="https://img.shields.io/badge/Evaluation-MLflow-orange?style=flat-square"/>
   <img src="https://img.shields.io/badge/Deployment-Azure%20Cloud-0078D4?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square"/>
-  <img src="https://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
+  img.shields.io/badge/Container-Docker-2496ED?style=flat-square"/>
+  ://img.shields.io/badge/UI-Streamlit-red?style=flat-square"/>
 </p>
 
 ---
@@ -32,7 +33,7 @@ Professionals working with large volumes of unstructured documents (medical, leg
 - Navigate large PDF corpora efficiently  
 - Use traditional keyword search effectively  
 
-➡️ This results in **lost productivity and inefficient decision-making**.
+➡️ This results in **lost productivity and inefficient decision-making**
 
 ---
 
@@ -76,8 +77,8 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
 
 # 📊 Data & Inputs
 
-* 15 domain-specific oncology PDF documents
-* Natural language user queries
+* 15 oncology PDF documents
+* Natural language queries
 * Embedding model: `all-MiniLM-L6-v2`
 * Vector DB: ChromaDB
 
@@ -85,33 +86,26 @@ User → Streamlit UI → Retriever → Vector DB → Context Chunks
 
 # 🔧 Technical Implementation
 
-## 1️⃣ Document Ingestion
+## Document Ingestion
 
-* Parsed PDFs using **LangChain PyPDFLoader**
+* LangChain PyPDFLoader
 
-## 2️⃣ Text Chunking
+## Text Chunking
 
 * Recursive splitting with overlap
 
-## 3️⃣ Embeddings
+## Embeddings
 
-* Generated via **Sentence Transformers**
+* Sentence Transformers
 
-## 4️⃣ Vector Storage
+## Retrieval
 
-* Stored in **ChromaDB**
-* Persistent and preloaded
+* Top-K search + filtering
 
-## 5️⃣ Retrieval Pipeline
+## LLM
 
-* Top-K retrieval
-* Similarity filtering
-
-## 6️⃣ LLM Integration
-
-* **Anthropic Claude API**
+* Anthropic Claude API
 * Multi-turn conversations
-* Context-aware responses
 
 ***
 
@@ -147,17 +141,15 @@ Local → Docker → ACR → Azure → Live App
 
 # 🌐 Live Demo
 
-```
-https://rag-doc-assistant.azurewebsites.net
-```
+<https://rag-doc-assistant.azurewebsites.net>
 
 ***
 
 # 🖥 User Interface
 
 * Streamlit chat UI
-* Real-time responses
-* Source citations display
+* Real-time answers
+* Source citations
 
 ***
 
@@ -173,7 +165,7 @@ docker run -p 8501:8501 rag-qa-system
 # 🔐 Security & Privacy
 
 ✅ Private dataset ready  
-✅ Azure Key Vault for secrets  
+✅ Secure API storage (Key Vault)  
 ✅ No external data leakage
 
 ***
@@ -182,7 +174,7 @@ docker run -p 8501:8501 rag-qa-system
 
 * Azure horizontal scaling
 * Multi-user support
-* SaaS-ready architecture
+* SaaS-ready
 
 ***
 
@@ -203,10 +195,10 @@ docker run -p 8501:8501 rag-qa-system
 
 # 🚀 Key Achievements
 
-* ✅ Built end-to-end RAG system
-* ✅ Optimized via MLflow experiments
-* ✅ Production Azure deployment
-* ✅ Low-latency responses
+* ✅ End-to-end RAG system
+* ✅ MLflow optimization
+* ✅ Azure deployment
+* ✅ Low latency responses
 
 ***
 
@@ -215,14 +207,14 @@ docker run -p 8501:8501 rag-qa-system
 * Healthcare
 * Legal
 * Research
-* Enterprise knowledge systems
+* Enterprise systems
 
 ***
 
 # 📬 Contact
 
 **Mohammad Saad**  
-Data Scientist & Engineer
+Data Scientist & AI Engineer
 
 ***
 
